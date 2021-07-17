@@ -10,7 +10,7 @@ const index = ()=>{
         const state = createState(24)
         localStorage.setItem('state', state);
         const callback = encodeURIComponent(callbackUri)
-        const uri = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${callback}&response_type=code&scope=guilds%20messages.read&state=${state}`
+        const uri = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${callback}&response_type=token&scope=guilds%20messages.read&state=${state}`
         router.replace(uri)
     },[router, clientId, callbackUri])
 
